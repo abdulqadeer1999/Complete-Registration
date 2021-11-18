@@ -39,9 +39,16 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <title>Login</title>
   </head>
   <body>
+  <?php
 
+if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+ 
+  $loggedin = true;
+}else {
+  $loggedin = false;
+}
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/login">Login System</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -51,25 +58,35 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="/login/home.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
+      </li>';
+    
+      if(!$loggedin){
+     
+     echo   '<li class="nav-item">
         <a class="nav-link" href="/login/login.php">Login</a>
       </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="/login/signup.php">Sign Up</a>
-      </li>
-      <li class="nav-item">
+      </li>';
+      }
+      if($loggedin) {
+     echo '<li class="nav-item">
         <a class="nav-link" href="/login/logout.php">Log Out</a>
-      </li>
+      </li>';
+      }
      
       
-    </ul>
+   echo '</ul>
     <form class="form-inline my-2 my-lg-0">
  
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Welcome <?php echo $_SESSION['email']?></button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Welcome <?php echo $_SESSION["email"]?></button>
     </form>
   </div>
-</nav>
+</nav>';
+
+?>
+
 
 <h1 style="margin-top:20px;text-align:center; color:blue;">Welcome <?php echo $_SESSION['email']?>This is Home Page</h1>
 
