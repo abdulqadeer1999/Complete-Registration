@@ -75,17 +75,16 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="nav-link" href="/login/logout.php">Log Out</a>
       </li>';
       }
-     
+    ?>
       
-   echo '</ul>
+   </ul>
     <form class="form-inline my-2 my-lg-0">
  
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Welcome <?php echo $_SESSION["email"]?></button>
     </form>
   </div>
-</nav>';
+</nav>
 
-?>
 
 
 <h1 style="margin-top:20px;text-align:center; color:blue;">Welcome <?php echo $_SESSION['email']?>This is Home Page</h1>
