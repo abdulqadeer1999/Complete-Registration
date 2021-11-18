@@ -32,8 +32,9 @@ if($numExistRows > 0){
 
     if(($password == $cpassword)) {
 
+      $hash = password_hash($password ,PASSWORD_DEFAULT);
     $sql = "INSERT INTO `users` (`username`, `email` ,`password` ,`dt`) 
-    VALUES ('$username', '$email', '$password', current_timestamp())";
+    VALUES ('$username', '$email', '$hash', current_timestamp())";
 
     $result = mysqli_query($conn,$sql); 
 

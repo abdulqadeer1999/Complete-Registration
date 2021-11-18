@@ -19,22 +19,46 @@ $password = $_POST['password'];
 
 // $exists= false;
 
-    $sql = "Select * from users where email='$email'  AND password='$password'";
+    // $sql = "Select * from users where email='$email'  AND password='$password'";
+
+    $sql = "Select * from users where email='$email'";
+
     $result = mysqli_query($conn,$sql); 
     $num  = mysqli_num_rows($result);
     
 
     if($num == 1) {
+
+      // while hashing password verify
      
+      while($row=mysqli_fetch_assoc($result)) {
+
+        if(password_verify($password, $row['password'])) {
+          $login = true;
+
+          
+      //In password hashing
+            
+            session_start();
+            $_SESSION['loggedin'] = true;
+            $_SESSION['email'] = $email;
+            header("location:home.php");
+            exit;
+        }
+        else{
+          $showError = "Invalid Credentials";
+      } 
+        
+      }
       
-      $login = true;
+     
     
-    
-      session_start();
-      $_SESSION['loggedin'] = true;
-      $_SESSION['email'] = $email;
-      header("location:home.php");
-      exit;
+    // Before password Hashing 
+      // session_start();
+      // $_SESSION['loggedin'] = true;
+      // $_SESSION['email'] = $email;
+      // header("location:home.php");
+      // exit;
      
        
     } else{
