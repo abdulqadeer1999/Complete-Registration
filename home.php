@@ -6,6 +6,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   exit;
 }
 
+
+
 // if(!isset( $_SESSION['loggedin']) || $_SESSION['user_type']=='admin'){
 //   header('location:admin.php');
 //   exit;
@@ -89,10 +91,13 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     ?>
       
    </ul>
+
+  
     <form class="form-inline my-2 my-lg-0">
  
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Welcome <?php echo $_SESSION["email"]?></button>
     </form>
+  
     
   </div>
 </nav>
@@ -105,7 +110,50 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
 
 
-
+        <div class="container">
+         <div class="row">
+        <div class="col-md-3">
+        <div class="card" >
+          <img class="card-img-top" src="./images/cake.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="card" >
+          <img class="card-img-top" src="./images/cake.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="card" >
+          <img class="card-img-top" src="./images/cake.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class="card" >
+          <img class="card-img-top" src="./images/cake.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+          </div>
+        </div>
+        </div>
+          </div>
+        </div>
 
 
     <!-- Optional JavaScript -->

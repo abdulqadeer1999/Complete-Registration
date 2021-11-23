@@ -41,7 +41,7 @@ if($numExistRows > 0){
     $sql = "INSERT INTO users (username, email, user_type, password) 
                  VALUES('$username', '$email', 'user', '$hash')";
 
-                 echo $sql;
+                //  echo $sql;
 
 
     $result = mysqli_query($conn,$sql); 
