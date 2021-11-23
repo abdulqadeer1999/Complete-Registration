@@ -56,29 +56,11 @@ $password = $_POST['password'];
         if(password_verify($password, $row['password'])) {
           $login = true;
 
-          
-
-          
-      //In password hashing
-     
-        
-
-          
-            // session_start();
+     //In password hashing
+        // session_start();
             // $_SESSION['loggedin'] = true;
             // $_SESSION['email'] = $email;
-           
-
-          
-            // $_SESSION['email'] = $email;
-
-                    
-            
-          
-            
-         
-          
-            header("location:home.php");
+          header("location:home.php");
             exit;
         }
         else{
@@ -87,9 +69,7 @@ $password = $_POST['password'];
         
       }
       
-     
-    
-    // Before password Hashing 
+     // Before password Hashing 
       // session_start();
       // $_SESSION['loggedin'] = true;
       // $_SESSION['email'] = $email;
