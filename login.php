@@ -15,6 +15,7 @@ include './_dbconnect.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
+// $user_type =['user_type'];
 
 
 // $exists= false;
@@ -33,15 +34,66 @@ $password = $_POST['password'];
      
       while($row=mysqli_fetch_assoc($result)) {
 
+        if($row['user_type'] == 'admin') {
+
+          
+          session_start();
+          $_SESSION['loggedin'] = true;
+          $_SESSION['email'] = $email;
+          $_SESSION['user_type'] = $row['user_type'];
+          header('location:admin.php');
+         
+
+        }else {
+
+          session_start();
+          $_SESSION['loggedin'] = true;
+          $_SESSION['email'] = $email;
+          $_SESSION['user_type'] = $row['user_type'];
+          header('location:home.php');
+        }
+
         if(password_verify($password, $row['password'])) {
           $login = true;
 
           
+
+          
       //In password hashing
+     
+        
+
+          
+            // session_start();
+            // $_SESSION['loggedin'] = true;
+            // $_SESSION['email'] = $email;
+           
+
+          
+            // $_SESSION['email'] = $email;
+
+                    
             
-            session_start();
-            $_SESSION['loggedin'] = true;
-            $_SESSION['email'] = $email;
+          
+            // $_SESSION['user_type'] = $user_type;
+            
+            // $user_type = ['user_type'];
+
+            // switch($user_type) {
+
+            //   case 'user';
+            //     header('location:home.php');
+            //     break;
+            //     case 'admin';
+            //       header('location:admin.php');
+            //       break;
+
+            //       default :
+            //       $showError = "Invalid Credentials";
+            // }
+            
+         
+          
             header("location:home.php");
             exit;
         }

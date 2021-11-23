@@ -6,6 +6,25 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   exit;
 }
 
+// if(!isset( $_SESSION['loggedin']) || $_SESSION['user_type']=='admin'){
+//   header('location:admin.php');
+//   exit;
+//  }
+if(isset($_SESSION['user_type']))
+{
+  if($_SESSION['user_type'] != 'user')
+  {
+    header('Location: admin.php');
+  }
+}
+else
+{
+  header('Location: home.php');
+}
+
+//  include 'partials/_nav.php'
+
+
 ?>
 
 

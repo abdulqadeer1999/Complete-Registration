@@ -33,8 +33,16 @@ if($numExistRows > 0){
     if(($password == $cpassword)) {
 
       $hash = password_hash($password ,PASSWORD_DEFAULT);
-    $sql = "INSERT INTO `users` (`username`, `email` ,`password` ,`dt`) 
-    VALUES ('$username', '$email', '$hash', current_timestamp())";
+    // echo $hash;
+
+    // $sql = "INSERT INTO `users` (`username`, `email` ,`password` ,`dt`) 
+    // VALUES ('$username', '$email', '$hash', current_timestamp())";
+
+    $sql = "INSERT INTO users (username, email, user_type, password) 
+                 VALUES('$username', '$email', 'user', '$hash')";
+
+                 echo $sql;
+
 
     $result = mysqli_query($conn,$sql); 
 
@@ -107,10 +115,10 @@ if($showError) {
   <div class="form-group col-md-6 mt-5">
 
   <label for="name">User Name </label>
-    <input type="text" class="form-control" id="username" name="username"  placeholder="Enter Name" required>
+    <input type="text" class="form-control" id="username" name="username"  placeholder="Enter Name"  required>
     
     <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required="required" >
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"  required="required" >
   
   </div>
   <div class="form-group col-md-6">
