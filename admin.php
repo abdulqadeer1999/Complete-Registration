@@ -159,7 +159,7 @@ if(isset($_POST['submit'])) {
      
     
 
-$i=0;
+$i=0    ;
 while($result = mysqli_fetch_array($querydisplay)) {
 
 ?>
@@ -187,17 +187,20 @@ while($result = mysqli_fetch_array($querydisplay)) {
 
 $i++;
 
+};
+
+
 }
-
-}else {
-echo "Invalid Image Format";
-}
-
-
+else {
+  echo "Invalid Image Format";
+  };
 
 
 
 ?>
+
+
+
 
 
  
