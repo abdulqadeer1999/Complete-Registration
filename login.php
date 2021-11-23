@@ -75,22 +75,6 @@ $password = $_POST['password'];
                     
             
           
-            // $_SESSION['user_type'] = $user_type;
-            
-            // $user_type = ['user_type'];
-
-            // switch($user_type) {
-
-            //   case 'user';
-            //     header('location:home.php');
-            //     break;
-            //     case 'admin';
-            //       header('location:admin.php');
-            //       break;
-
-            //       default :
-            //       $showError = "Invalid Credentials";
-            // }
             
          
           
