@@ -146,7 +146,7 @@ if(isset($_POST['submit'])) {
 
     //    echo $sql;
 
-    // fetching data
+    // fetching data from database
        
     $displayquery = "select * from  admin";
     $querydisplay= mysqli_query($conn,$displayquery);
