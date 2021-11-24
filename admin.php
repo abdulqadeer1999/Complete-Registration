@@ -166,7 +166,9 @@ if(isset($_POST['submit'])) {
     <div class="row mt-5">
 
     <?php
-      
+      ini_set('display_errors', 1);
+      ini_set('display_startup_errors', 1);
+      error_reporting(E_ALL);
 $i=0;
 while($result = mysqli_fetch_array($querydisplay)) {
 
@@ -186,23 +188,6 @@ while($result = mysqli_fetch_array($querydisplay)) {
   </div>
   </div>
   
-<!--   
-  <div class="col-md-3">
-
-  <div class="card" >
-  
-    <img class='card-img-top' src="<?php echo $result ['image']; ?>" height="130px" width="150px"> 
-    <div class="card-body">
-    <h5 class="card-title">Product ID:<?php echo $result ['id']; ?></h5>
-      <h5 class="card-title"> Product Name:<?php echo $result ['productname']; ?></h5>
-      <p class="card-text">Price:<?php echo $result ['price']; ?>:RS </p>
-      <a href="#" class="btn btn-primary">Category:<?php echo $result ['category']; ?></a>
-    </div>
-  </div>
-  </div>
-  </div>
-  </div>
-   -->
 
   
 
