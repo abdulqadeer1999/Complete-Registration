@@ -30,7 +30,6 @@ $password = $_POST['password'];
 
     if($num == 1) {
 
-      // while hashing password verify
      
       while($row=mysqli_fetch_assoc($result)) {
 

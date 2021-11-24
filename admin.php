@@ -37,6 +37,7 @@ else
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     
@@ -88,8 +89,6 @@ else
     </div>
   </div>
 </div>
-</body>
-</html>
 
 <?php
 
@@ -153,34 +152,59 @@ if(isset($_POST['submit'])) {
     mysqli_close($conn);
 
    
-    }
+  }
 
 
      
     
 
-$i=0    ;
+
+
+   ?>
+
+  <div class="container">
+    <div class="row mt-5">
+
+    <?php
+      
+$i=0;
 while($result = mysqli_fetch_array($querydisplay)) {
 
 ?>
-   
+      <div class="col-md-3 col-12 mb-5">
+        
 
-   <div class="container">
-       <div class="row">
-           <div class="col-md-3">
- <div class="card" style="width: 18rem;">
- 
-  <img class='card-img-top' src="<?php echo $result ['image']; ?>" height="130px" width="150px"> 
-  <div class="card-body">
-  <h5 class="card-title">Product ID:<?php echo $result ['id']; ?></h5>
-    <h5 class="card-title"> Product Name:<?php echo $result ['productname']; ?></h5>
-    <p class="card-text">Price:<?php echo $result ['price']; ?>:RS </p>
-    <a href="#" class="btn btn-primary">Category:<?php echo $result ['category']; ?></a>
+  <div class="card" >
+  
+    <img class='card-img-top' src="<?php echo $result ['image']; ?>" height="130px" width="150px"> 
+    <div class="card-body">
+    <h5 class="card-title">Product ID:<?php echo $result ['id']; ?></h5>
+      <h5 class="card-title"> Product Name:<?php echo $result ['productname']; ?></h5>
+      <p class="card-text">Price:<?php echo $result ['price']; ?>:RS </p>
+      <a href="#" class="btn btn-primary">Category:<?php echo $result ['category']; ?></a>
+    </div>
   </div>
-</div>
-</div>
-</div>
-</div>
+  </div>
+  
+<!--   
+  <div class="col-md-3">
+
+  <div class="card" >
+  
+    <img class='card-img-top' src="<?php echo $result ['image']; ?>" height="130px" width="150px"> 
+    <div class="card-body">
+    <h5 class="card-title">Product ID:<?php echo $result ['id']; ?></h5>
+      <h5 class="card-title"> Product Name:<?php echo $result ['productname']; ?></h5>
+      <p class="card-text">Price:<?php echo $result ['price']; ?>:RS </p>
+      <a href="#" class="btn btn-primary">Category:<?php echo $result ['category']; ?></a>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+   -->
+
+  
 
 
 <?php
@@ -201,6 +225,5 @@ else {
 
 
 
-
-
- 
+</body>
+</html>
