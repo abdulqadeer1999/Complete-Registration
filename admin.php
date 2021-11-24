@@ -93,6 +93,7 @@ else
 
 
 <?php
+$showMsg = false;
 
 $server = "localhost";
 $username = "root";
@@ -137,9 +138,11 @@ if(isset($_POST['submit'])) {
     $sql= "INSERT INTO  admin(productname, price,category, image)
      VALUES ('$productname','$price','$category','$destinationfile')";
      
+     $result = mysqli_query($conn,$sql); 
 
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+
+    if ($result) {
+        showMsg : true;
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       
@@ -165,6 +168,15 @@ if(isset($_POST['submit'])) {
 
     <?php
     
+  if($showMsg) {
+    echo  '<div class="alert alert-success alert-dismissible fade show" role="alert">
+   <strong>Success!</strong> Products Added Succcessfully.
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>';
+ 
+ }
 $i=0;
 while($result = mysqli_fetch_array($querydisplay)) {
 
