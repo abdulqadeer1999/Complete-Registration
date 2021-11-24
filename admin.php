@@ -90,6 +90,8 @@ else
   </div>
 </div>
 
+
+
 <?php
 
 $server = "localhost";
@@ -151,26 +153,21 @@ if(isset($_POST['submit'])) {
     $querydisplay= mysqli_query($conn,$displayquery);
     mysqli_close($conn);
 
-   
+  
   }
 
-
+  ?>
      
-    
 
-
-
-   ?>
 
   <div class="container">
     <div class="row mt-5">
 
     <?php
-      ini_set('display_errors', 1);
-      ini_set('display_startup_errors', 1);
-      error_reporting(E_ALL);
+    
 $i=0;
 while($result = mysqli_fetch_array($querydisplay)) {
+
 
 ?>
       <div class="col-md-3 col-12 mb-5">
@@ -190,25 +187,24 @@ while($result = mysqli_fetch_array($querydisplay)) {
   
 
   
-
+ 
 
 <?php
 
 $i++;
 
-};
+}
 
 
 }
+
 else {
   echo "Invalid Image Format";
   };
 
-
+ 
 
 ?>
-
-
 
 </body>
 </html>

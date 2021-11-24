@@ -18,6 +18,10 @@ if(isset($_SESSION['user_type']))
   {
     header('Location: admin.php');
   }
+  // if($_SESSION['user_type'] = 'admin') {
+
+  //   header('location:home.php');
+  // }
 }
 else
 {
@@ -107,53 +111,10 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <h1 style="margin-top:20px;text-align:center; color:blue;">Welcome <?php echo $_SESSION['email']?>This is Home Page</h1>
 
 
+ <!-- Products from admin panel -->
 
 
 
-        <div class="container">
-         <div class="row">
-        <div class="col-md-3">
-        <div class="card" >
-          <img class="card-img-top" src="./images/cake.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add To Cart</a>
-          </div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="card" >
-          <img class="card-img-top" src="./images/cake.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add To Cart</a>
-          </div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="card" >
-          <img class="card-img-top" src="./images/cake.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add To Cart</a>
-          </div>
-        </div>
-        </div>
-        <div class="col-md-3">
-        <div class="card" >
-          <img class="card-img-top" src="./images/cake.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add To Cart</a>
-          </div>
-        </div>
-        </div>
-          </div>
-        </div>
 
 
     <!-- Optional JavaScript -->
